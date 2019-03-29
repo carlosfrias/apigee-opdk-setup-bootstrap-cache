@@ -17,8 +17,8 @@
     apigee_setup: '{{ apigee_home }}/apigee-setup/bin/setup.sh'
     apigee_update: '{{ apigee_home }}/apigee-setup/bin/update.sh'
     apigee_all: '{{ apigee_home }}/apigee-service/bin/apigee-all'
-    local_apigee_path: "{{ local_apigee_path }}"
-    local_apigee_secure_path: "{{ local_apigee_secure_path }}"
+    local_apigee_path: "{{ local_apigee_path | default('~/.apigee') }}"
+    local_apigee_secure_path: "{{ local_apigee_secure_path | default('~/.apigee-secure') }}"
     apigeerepobasepath: "{{ apigeerepobasepath }}"
     opdk_installer_path: '{{ opdk_installer_path }}'
 
