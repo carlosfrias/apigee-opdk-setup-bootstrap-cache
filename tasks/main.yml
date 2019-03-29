@@ -1,20 +1,25 @@
 ---
 # tasks file for apigee-opdk-setup-bootstrap-cache
 - name: Update bootstrap cache with key and value
-  cache:
-    key: "{{ item.key }}"
-    value: "{{ item.value }}"
-  with_items:
-  - { key: "apigeerepobasepath", value: "{{ apigeerepobasepath }}" }
-  - { key: 'apigee_service', value: '{{ apigee_service }}' }
-  - { key: 'apigee_setup', value: '{{ apigee_setup }}' }
-  - { key: 'apigee_update', value: '{{ apigee_update }}' }
-  - { key: 'apigee_all', value: '{{ apigee_all }}' }
-  - { key: 'opdk_installer_path', value: '{{ opdk_installer_path }}' }
-  - { key: 'opdk_license_target_file_path', value: "{{ opdk_license_target_file_path }}" }
-  - { key: 'opdk_license_source_file_name', value: "{{ opdk_license_source_file_name }}" }
-  - { key: 'default_apigee_repo_user', value: '{{ default_apigee_repo_user }}' }
-  - { key: 'default_apigee_repo_password', value: '{{ default_apigee_repo_password}}' }
-  - { key: 'default_apigee_repo_uri', value: '{{ default_apigee_repo_uri }}' }
-  - { key: 'default_apigee_repo_protocol', value: '{{ default_apigee_repo_protocol }}' }
-  - { key: 'default_apigee_repo_url', value: '{{ default_apigee_repo_url }}' }
+  tags: ['cache']
+  set_fact:
+    cacheable: yes
+    apigee_home: "{{ apigee_home }}"
+    opdk_resources_path: "{{ opdk_resources_path }}"
+    opdk_license_target_file_path: "{{ opdk_resources_path }}/license.conf"
+    opdk_license_source_file_name: "{{ local_apigee_secure_path }}/license.txt"
+    default_apigee_repo_user: '{{ opdk_user_name }}'
+    default_apigee_repo_password: ''
+    default_apigee_repo_uri: 'software.apigee.com'
+    default_apigee_repo_protocol: 'https'
+    default_apigee_repo_url: 'https://software.apigee.com'
+    apigee_service: '{{ apigee_home }}/apigee-service/bin/apigee-service'
+    apigee_setup: '{{ apigee_home }}/apigee-setup/bin/setup.sh'
+    apigee_update: '{{ apigee_home }}/apigee-setup/bin/update.sh'
+    apigee_all: '{{ apigee_home }}/apigee-service/bin/apigee-all'
+    local_apigee_path: "{{ local_apigee_path }}"
+    local_apigee_secure_path: "{{ local_apigee_secure_path }}"
+    apigeerepobasepath: "{{ apigeerepobasepath }}"
+    opdk_installer_path: '{{ opdk_installer_path }}'
+
+
