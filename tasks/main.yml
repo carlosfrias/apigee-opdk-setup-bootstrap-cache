@@ -6,8 +6,8 @@
     cacheable: yes
     apigee_home: "{{ apigee_home | default('/opt/apigee') }}"
     opdk_resources_path: "{{ opdk_resources_path | default('/tmp/edge') }}"
-    local_apigee_path: "{{ local_apigee_path | default('~/.apigee') }}"
-    local_apigee_secure_path: "{{ local_apigee_secure_path | default('~/.apigee-secure') }}"
+    local_apigee_path: "{{ local_apigee_path }}"
+    local_apigee_secure_path: "{{ local_apigee_secure_path }}"
 
 - name: Update bootstrap cache with key and value
   tags: ['cache']
