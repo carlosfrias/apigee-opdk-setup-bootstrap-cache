@@ -5,7 +5,7 @@
   set_fact:
     cacheable: yes
     apigee_home: "{{ apigee_home | default('/opt/apigee') }}"
-    opdk_resources_path: "{{ opdk_resources_path | default('/tmp/edge') }}"
+    opdk_resources_path: "{{ opdk_resources_path }}"
     local_apigee_path: "{{ local_apigee_path }}"
     local_apigee_secure_path: "{{ local_apigee_secure_path }}"
 
