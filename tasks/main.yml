@@ -1,7 +1,6 @@
 ---
 # tasks file for apigee-opdk-setup-bootstrap-cache
 - name: Update root attributes
-  tags: ['cache']
   set_fact:
     cacheable: yes
     apigee_home: "{{ apigee_home | default('/opt/apigee') }}"
@@ -10,7 +9,6 @@
     local_apigee_secure_path: "{{ local_apigee_secure_path }}"
 
 - name: Update bootstrap cache with key and value
-  tags: ['cache']
   set_fact:
     cacheable: yes
     opdk_license_target_file_path: "{{ opdk_resources_path }}/license.conf"
