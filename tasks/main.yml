@@ -23,6 +23,5 @@
     apigee_update: '{{ apigee_home }}/apigee-setup/bin/update.sh'
     apigee_all: '{{ apigee_home }}/apigee-service/bin/apigee-all'
     apigeerepobasepath: "{{ apigeerepobasepath }}"
-    opdk_installer_path: '{{ opdk_installer_path }}'
 
 

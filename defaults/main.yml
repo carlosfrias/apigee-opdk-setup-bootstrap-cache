@@ -16,11 +16,8 @@ apigee_update: '{{ apigee_home }}/apigee-setup/bin/update.sh'
 # Apigee all command for 4.16.xx
 apigee_all: '{{ apigee_home }}/apigee-service/bin/apigee-all'
 
-# Apigee staging installation folder
-opdk_installer_path: "/tmp/edge"
-
 # Apigee license file path
-opdk_license_target_file_path: "{{ opdk_installer_path }}/license.conf"
+opdk_license_target_file_path: "{{ opdk_resources_path }}/license.conf"
 
 # Apigee license file provided by customer
 opdk_license_source_file_name: '{{ local_apigee_secure }}/license.txt'
